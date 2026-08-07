@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://imranahsan23.github.io/sitemap.xml

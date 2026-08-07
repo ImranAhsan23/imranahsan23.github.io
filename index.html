@@ -3,18 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#17324d">
+  <meta name="theme-color" content="#0d2944">
   <meta name="color-scheme" content="light">
 
   <title>Imran Ahsan | Trustworthy AI & Graph Machine Learning</title>
-  <meta name="description" content="Academic website of Imran Ahsan, a researcher in trustworthy AI, graph neural networks, graph unlearning, explainable AI, privacy-aware machine learning, and data science.">
+  <meta name="description" content="Academic profile of Imran Ahsan, a researcher in trustworthy AI, graph neural networks, graph unlearning, explainable AI, privacy-aware machine learning, and reproducible data science.">
   <meta name="author" content="Imran Ahsan">
   <link rel="canonical" href="https://imranahsan23.github.io/">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
 
   <meta property="og:type" content="profile">
   <meta property="og:url" content="https://imranahsan23.github.io/">
   <meta property="og:title" content="Imran Ahsan | Trustworthy AI & Graph Machine Learning">
-  <meta property="og:description" content="Research on graph unlearning, explainable AI, trustworthy graph learning, and reproducible evaluation.">
+  <meta property="og:description" content="Research on graph unlearning, explainable verification, trustworthy graph learning, and reproducible evaluation.">
   <meta property="og:image" content="https://avatars.githubusercontent.com/u/175528088?v=4">
   <meta property="og:image:alt" content="Portrait of Imran Ahsan">
   <meta name="twitter:card" content="summary">
@@ -32,6 +33,11 @@
       "@type": "CollegeOrUniversity",
       "name": "Chung-Ang University"
     },
+    "alumniOf": [
+      {"@type": "CollegeOrUniversity", "name": "Chung-Ang University"},
+      {"@type": "CollegeOrUniversity", "name": "National University of Sciences and Technology"},
+      {"@type": "CollegeOrUniversity", "name": "International Islamic University Islamabad"}
+    ],
     "sameAs": [
       "https://scholar.google.com/citations?user=h_P3dAkAAAAJ&hl=en",
       "https://orcid.org/0000-0002-7924-1186",
@@ -44,242 +50,443 @@
       "Explainable Artificial Intelligence",
       "Trustworthy Artificial Intelligence",
       "Privacy-Preserving Machine Learning",
-      "Data Science"
+      "Data Science",
+      "Reproducible Machine Learning"
     ]
   }
   </script>
 
   <style>
     :root {
-      --page: #f5f5f2;
-      --paper: #ffffff;
-      --ink: #1d2730;
-      --muted: #64707a;
-      --navy: #17324d;
-      --navy-soft: #e7edf2;
-      --warm: #8a603d;
-      --line: #d9dde0;
-      --line-dark: #bcc4ca;
-      --max: 1100px;
-      --serif: Georgia, "Times New Roman", serif;
-      --sans: Aptos, "Segoe UI", Arial, Helvetica, sans-serif;
+      --navy-950: #081c30;
+      --navy-900: #0d2944;
+      --navy-800: #153b5c;
+      --navy-700: #245271;
+      --teal-700: #176a67;
+      --teal-100: #dff0ed;
+      --gold-600: #ad7440;
+      --gold-100: #f4e9dc;
+      --ink: #18232d;
+      --body: #43515e;
+      --muted: #6a7782;
+      --line: #dce2e6;
+      --line-strong: #c7d0d6;
+      --surface: #ffffff;
+      --surface-soft: #f4f6f6;
+      --surface-warm: #f8f5f0;
+      --page: #eef2f3;
+      --shadow-sm: 0 8px 24px rgba(8, 28, 48, 0.08);
+      --shadow-lg: 0 28px 70px rgba(8, 28, 48, 0.16);
+      --radius-sm: 10px;
+      --radius-md: 18px;
+      --radius-lg: 28px;
+      --max: 1180px;
+      --serif: Iowan Old Style, Palatino Linotype, Book Antiqua, Georgia, serif;
+      --sans: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
     }
 
     *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+    html { scroll-behavior: smooth; scroll-padding-top: 86px; }
     body {
       margin: 0;
       min-width: 320px;
-      background: var(--page);
+      background: var(--surface);
       color: var(--ink);
       font-family: var(--sans);
       font-size: 16px;
-      line-height: 1.66;
+      line-height: 1.68;
       text-rendering: optimizeLegibility;
       -webkit-font-smoothing: antialiased;
     }
 
-    a { color: inherit; }
+    body.menu-open { overflow: hidden; }
     img { display: block; max-width: 100%; }
-    p, h1, h2, h3 { margin-top: 0; }
-    ::selection { background: var(--navy); color: #fff; }
+    a { color: inherit; }
+    h1, h2, h3, p { margin-top: 0; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    ::selection { background: var(--teal-700); color: #fff; }
 
     .skip-link {
       position: fixed;
       z-index: 1000;
-      top: 10px;
-      left: 10px;
+      left: 16px;
+      top: 12px;
       padding: 10px 14px;
-      background: var(--navy);
-      color: #fff;
+      border-radius: 8px;
+      background: #fff;
+      color: var(--navy-950);
+      font-weight: 800;
       text-decoration: none;
       transform: translateY(-160%);
-      transition: transform 150ms ease;
+      transition: transform 160ms ease;
     }
     .skip-link:focus { transform: translateY(0); }
 
     .container {
-      width: min(calc(100% - 42px), var(--max));
+      width: min(calc(100% - 40px), var(--max));
       margin-inline: auto;
     }
 
     .site-header {
-      position: sticky;
-      z-index: 50;
-      top: 0;
-      border-bottom: 1px solid rgba(188, 196, 202, 0.8);
-      background: rgba(245, 245, 242, 0.94);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      position: fixed;
+      z-index: 100;
+      inset: 0 0 auto;
+      border-bottom: 1px solid transparent;
+      color: #fff;
+      transition: background 180ms ease, border-color 180ms ease, box-shadow 180ms ease, color 180ms ease;
+    }
+
+    .site-header.scrolled,
+    .site-header.menu-active {
+      border-bottom-color: rgba(199, 208, 214, 0.8);
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 10px 30px rgba(8, 28, 48, 0.08);
+      color: var(--navy-950);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
     }
 
     .header-inner {
-      min-height: 70px;
+      min-height: 76px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 28px;
+      gap: 26px;
     }
 
-    .wordmark {
-      color: var(--navy);
-      font-family: var(--serif);
-      font-size: 1.2rem;
-      font-weight: 700;
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      margin-right: auto;
+      font-size: 1.02rem;
+      font-weight: 850;
       letter-spacing: -0.02em;
       text-decoration: none;
       white-space: nowrap;
     }
 
-    .nav {
+    .brand-mark {
+      display: grid;
+      width: 34px;
+      height: 34px;
+      place-items: center;
+      border: 1px solid rgba(255, 255, 255, 0.48);
+      border-radius: 50%;
+      font-family: var(--serif);
+      font-size: 0.92rem;
+      font-weight: 800;
+    }
+
+    .site-header.scrolled .brand-mark,
+    .site-header.menu-active .brand-mark { border-color: var(--line-strong); }
+
+    .desktop-nav {
       display: flex;
       align-items: center;
-      gap: 27px;
-      margin-left: auto;
+      gap: 28px;
     }
 
-    .nav a {
-      color: var(--muted);
-      font-size: 0.9rem;
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    .nav a:hover,
-    .nav a:focus-visible { color: var(--navy); }
-
-    .header-cv {
-      padding: 8px 14px;
-      border: 1px solid var(--navy);
-      color: var(--navy);
-      font-size: 0.86rem;
+    .desktop-nav a {
+      position: relative;
+      color: currentColor;
+      font-size: 0.88rem;
       font-weight: 700;
       text-decoration: none;
-      white-space: nowrap;
+      opacity: 0.82;
     }
 
+    .desktop-nav a::after {
+      position: absolute;
+      left: 0;
+      right: 100%;
+      bottom: -8px;
+      height: 2px;
+      background: currentColor;
+      content: "";
+      transition: right 160ms ease;
+    }
+
+    .desktop-nav a:hover,
+    .desktop-nav a:focus-visible { opacity: 1; }
+    .desktop-nav a:hover::after,
+    .desktop-nav a:focus-visible::after { right: 0; }
+
+    .header-cv {
+      display: inline-flex;
+      min-height: 40px;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 15px;
+      border: 1px solid rgba(255, 255, 255, 0.48);
+      border-radius: 999px;
+      font-size: 0.84rem;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .site-header.scrolled .header-cv,
+    .site-header.menu-active .header-cv { border-color: var(--navy-800); }
     .header-cv:hover,
-    .header-cv:focus-visible {
-      background: var(--navy);
-      color: #fff;
+    .header-cv:focus-visible { background: #fff; color: var(--navy-950); }
+    .site-header.scrolled .header-cv:hover,
+    .site-header.scrolled .header-cv:focus-visible { background: var(--navy-900); color: #fff; }
+
+    .menu-toggle {
+      display: none;
+      width: 42px;
+      height: 42px;
+      padding: 0;
+      border: 1px solid rgba(255, 255, 255, 0.48);
+      border-radius: 50%;
+      background: transparent;
+      color: currentColor;
+      cursor: pointer;
+    }
+
+    .site-header.scrolled .menu-toggle,
+    .site-header.menu-active .menu-toggle { border-color: var(--line-strong); }
+    .menu-toggle svg { width: 20px; height: 20px; }
+
+    .mobile-panel {
+      display: none;
+      position: fixed;
+      z-index: 90;
+      inset: 76px 0 0;
+      padding: 28px 20px 40px;
+      background: rgba(255, 255, 255, 0.985);
+    }
+
+    .mobile-panel.open { display: block; }
+    .mobile-panel nav {
+      width: min(100%, 560px);
+      margin-inline: auto;
+    }
+
+    .mobile-panel a {
+      display: flex;
+      min-height: 58px;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+      color: var(--navy-950);
+      font-family: var(--serif);
+      font-size: 1.55rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .mobile-panel .mobile-socials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 20px;
+      margin-top: 28px;
+    }
+    .mobile-panel .mobile-socials a {
+      min-height: auto;
+      border: 0;
+      font-family: var(--sans);
+      font-size: 0.9rem;
     }
 
     .hero {
-      padding: 94px 0 88px;
-      border-bottom: 1px solid var(--line);
-      background: var(--paper);
+      position: relative;
+      overflow: hidden;
+      min-height: 760px;
+      display: flex;
+      align-items: center;
+      padding: 132px 0 78px;
+      background:
+        radial-gradient(circle at 79% 26%, rgba(57, 156, 147, 0.28), transparent 28%),
+        radial-gradient(circle at 16% 86%, rgba(190, 133, 75, 0.18), transparent 30%),
+        linear-gradient(135deg, var(--navy-950) 0%, var(--navy-900) 48%, #123f55 100%);
+      color: #fff;
     }
+
+    .hero::before {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+      background-size: 58px 58px;
+      content: "";
+      mask-image: linear-gradient(to bottom, black, transparent 90%);
+    }
+
+    .network {
+      position: absolute;
+      z-index: 0;
+      width: 540px;
+      height: 540px;
+      right: -145px;
+      bottom: -210px;
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 50%;
+    }
+    .network::before,
+    .network::after {
+      position: absolute;
+      border: 1px solid rgba(255,255,255,.09);
+      border-radius: 50%;
+      content: "";
+    }
+    .network::before { inset: 70px; }
+    .network::after { inset: 145px; }
 
     .hero-grid {
+      position: relative;
+      z-index: 1;
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 300px;
+      grid-template-columns: minmax(0, 1.32fr) minmax(290px, 0.68fr);
       align-items: center;
-      gap: clamp(52px, 8vw, 100px);
+      gap: clamp(54px, 8vw, 112px);
     }
 
-    .kicker {
-      margin-bottom: 20px;
-      color: var(--warm);
-      font-size: 0.78rem;
-      font-weight: 800;
-      letter-spacing: 0.13em;
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 23px;
+      color: #bde3dd;
+      font-size: 0.76rem;
+      font-weight: 850;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
     }
 
-    h1 {
-      margin-bottom: 17px;
-      color: var(--navy);
-      font-family: var(--serif);
-      font-size: clamp(3.7rem, 8vw, 6.6rem);
-      font-weight: 600;
-      line-height: 0.95;
-      letter-spacing: -0.055em;
+    .eyebrow::before {
+      width: 30px;
+      height: 1px;
+      background: currentColor;
+      content: "";
     }
 
-    .hero-title {
-      margin-bottom: 22px;
-      color: var(--ink);
-      font-size: clamp(1.15rem, 2.2vw, 1.42rem);
+    h1 {
+      max-width: 790px;
+      margin-bottom: 23px;
+      font-family: var(--serif);
+      font-size: clamp(4.35rem, 9vw, 7.6rem);
       font-weight: 650;
-      letter-spacing: -0.015em;
+      line-height: 0.88;
+      letter-spacing: -0.065em;
+    }
+
+    .hero-role {
+      max-width: 760px;
+      margin-bottom: 22px;
+      color: #f2f6f8;
+      font-size: clamp(1.28rem, 2.45vw, 1.7rem);
+      font-weight: 720;
+      line-height: 1.3;
+      letter-spacing: -0.025em;
     }
 
     .hero-summary {
-      max-width: 720px;
-      margin-bottom: 20px;
-      color: #46535e;
-      font-size: 1.08rem;
-      line-height: 1.72;
+      max-width: 745px;
+      margin-bottom: 25px;
+      color: rgba(240, 246, 248, 0.8);
+      font-size: 1.06rem;
+      line-height: 1.78;
     }
 
-    .degree-status {
-      max-width: 720px;
-      margin-bottom: 29px;
-      padding-left: 15px;
-      border-left: 3px solid var(--warm);
-      color: var(--muted);
-      font-size: 0.93rem;
+    .status-line {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      max-width: 700px;
+      margin-bottom: 31px;
+      color: rgba(240,246,248,.72);
+      font-size: 0.92rem;
     }
+    .status-dot {
+      flex: 0 0 auto;
+      width: 9px;
+      height: 9px;
+      margin-top: 8px;
+      border-radius: 50%;
+      background: #7fd4c9;
+      box-shadow: 0 0 0 6px rgba(127,212,201,.13);
+    }
+    .status-line strong { color: #fff; }
 
-    .primary-links,
-    .profile-links,
-    .paper-links {
+    .hero-actions,
+    .social-links,
+    .paper-links,
+    .contact-links {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: 12px 18px;
+      gap: 12px;
     }
 
     .button {
       display: inline-flex;
+      min-height: 48px;
       align-items: center;
       justify-content: center;
-      min-height: 43px;
-      padding: 9px 17px;
-      border: 1px solid var(--navy);
-      background: var(--navy);
-      color: #fff;
+      gap: 9px;
+      padding: 10px 19px;
+      border: 1px solid #fff;
+      border-radius: 999px;
+      background: #fff;
+      color: var(--navy-950);
       font-size: 0.9rem;
-      font-weight: 700;
+      font-weight: 850;
       text-decoration: none;
+      transition: transform 160ms ease, background 160ms ease, color 160ms ease;
     }
 
-    .button.secondary {
-      background: transparent;
-      color: var(--navy);
-    }
-
+    .button.secondary { background: transparent; color: #fff; }
     .button:hover,
-    .button:focus-visible { opacity: 0.88; }
+    .button:focus-visible { transform: translateY(-2px); }
+    .button.secondary:hover,
+    .button.secondary:focus-visible { background: #fff; color: var(--navy-950); }
+    .button svg { width: 17px; height: 17px; }
 
-    .profile-links { margin-top: 24px; }
-    .profile-links a,
-    .text-link,
-    .paper-links a {
-      color: var(--navy);
-      font-size: 0.88rem;
-      font-weight: 700;
+    .social-links { margin-top: 25px; gap: 12px 22px; }
+    .social-links a {
+      color: rgba(255,255,255,.78);
+      font-size: 0.86rem;
+      font-weight: 750;
       text-decoration: none;
-      border-bottom: 1px solid rgba(23, 50, 77, 0.35);
     }
-    .profile-links a:hover,
-    .profile-links a:focus-visible,
-    .text-link:hover,
-    .text-link:focus-visible,
-    .paper-links a:hover,
-    .paper-links a:focus-visible { border-bottom-color: var(--navy); }
+    .social-links a:hover,
+    .social-links a:focus-visible { color: #fff; }
 
-    .portrait-wrap {
-      justify-self: end;
-      width: min(100%, 300px);
+    .portrait-column { position: relative; }
+    .portrait-shell {
+      position: relative;
+      max-width: 358px;
+      margin-left: auto;
+      padding: 14px;
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: 32px;
+      background: rgba(255,255,255,.08);
+      box-shadow: var(--shadow-lg);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
     }
 
-    .portrait {
+    .portrait-shell::before {
+      position: absolute;
+      z-index: -1;
+      width: 150px;
+      height: 150px;
+      right: -44px;
+      top: -45px;
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 50%;
+      content: "";
+    }
+
+    .portrait-media {
       position: relative;
       overflow: hidden;
       aspect-ratio: 4 / 5;
-      border: 1px solid var(--line-dark);
-      background: var(--navy-soft);
+      border-radius: 22px;
+      background:
+        radial-gradient(circle at 50% 35%, rgba(255,255,255,.16), transparent 29%),
+        linear-gradient(155deg, #244d64, #102d47);
     }
 
     .portrait-fallback {
@@ -287,400 +494,576 @@
       inset: 0;
       display: grid;
       place-items: center;
-      color: rgba(23, 50, 77, 0.34);
+      color: rgba(255,255,255,.58);
       font-family: var(--serif);
-      font-size: 5.2rem;
+      font-size: 5.8rem;
       font-weight: 700;
+      letter-spacing: -0.06em;
     }
 
-    .portrait img {
+    .portrait-media img {
       position: relative;
       z-index: 1;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center;
+      object-position: center 22%;
+      filter: saturate(.92) contrast(1.02);
     }
+    .portrait-media.image-failed img { display: none; }
 
     .portrait-caption {
-      margin: 12px 0 0;
-      color: var(--muted);
-      font-size: 0.78rem;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 17px 6px 4px;
+      color: rgba(255,255,255,.74);
+      font-size: 0.8rem;
       line-height: 1.5;
     }
+    .portrait-caption strong { color: #fff; font-size: 0.88rem; }
+    .portrait-caption span:last-child { text-align: right; }
 
-    .section {
-      padding: 82px 0;
-      border-bottom: 1px solid var(--line);
-    }
+    .section { padding: 104px 0; }
+    .section.soft { background: var(--surface-soft); }
+    .section.warm { background: var(--surface-warm); }
 
-    .section-grid {
+    .section-intro {
       display: grid;
-      grid-template-columns: 190px minmax(0, 1fr);
-      gap: 56px;
+      grid-template-columns: 210px minmax(0, 1fr);
+      gap: 36px;
+      margin-bottom: 54px;
     }
 
     .section-label {
-      margin: 0;
-      color: var(--warm);
+      padding-top: 8px;
+      color: var(--gold-600);
       font-size: 0.75rem;
-      font-weight: 800;
-      letter-spacing: 0.13em;
+      font-weight: 850;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
     }
 
-    h2 {
-      margin-bottom: 21px;
-      color: var(--navy);
+    .section-heading {
+      max-width: 820px;
+      margin-bottom: 18px;
+      color: var(--navy-950);
       font-family: var(--serif);
-      font-size: clamp(2rem, 4vw, 3.15rem);
-      font-weight: 600;
-      line-height: 1.12;
-      letter-spacing: -0.035em;
+      font-size: clamp(2.55rem, 5vw, 4.35rem);
+      font-weight: 650;
+      line-height: 1.03;
+      letter-spacing: -0.045em;
     }
 
-    .section-intro {
-      max-width: 780px;
-      margin-bottom: 38px;
-      color: #46535e;
-      font-size: 1.05rem;
-    }
-
-    .research-list {
-      border-top: 1px solid var(--line-dark);
-    }
-
-    .research-item {
-      display: grid;
-      grid-template-columns: 54px minmax(0, 1fr);
-      gap: 22px;
-      padding: 26px 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .research-number {
-      color: var(--warm);
-      font-family: var(--serif);
-      font-size: 1.2rem;
-      font-style: italic;
-    }
-
-    .research-item h3 {
-      margin-bottom: 8px;
-      color: var(--ink);
-      font-size: 1.06rem;
-      line-height: 1.35;
-    }
-
-    .research-item p {
-      max-width: 720px;
+    .section-lead {
+      max-width: 770px;
       margin-bottom: 0;
-      color: var(--muted);
+      color: var(--body);
+      font-size: 1.04rem;
+      line-height: 1.78;
     }
 
-    .section-topline {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 30px;
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
       margin-bottom: 28px;
     }
 
-    .section-topline h2 { margin-bottom: 0; }
+    .research-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 314px;
+      padding: 30px 28px 27px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+      box-shadow: 0 8px 24px rgba(8,28,48,.035);
+      transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+    }
+
+    .research-card::after {
+      position: absolute;
+      width: 130px;
+      height: 130px;
+      right: -60px;
+      bottom: -70px;
+      border: 1px solid rgba(23,106,103,.22);
+      border-radius: 50%;
+      content: "";
+    }
+
+    .research-card:hover {
+      transform: translateY(-5px);
+      border-color: #bccfd0;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .research-number {
+      display: grid;
+      width: 44px;
+      height: 44px;
+      margin-bottom: 55px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--teal-100);
+      color: var(--teal-700);
+      font-size: 0.76rem;
+      font-weight: 900;
+    }
+
+    .research-card h3 {
+      margin-bottom: 12px;
+      color: var(--navy-950);
+      font-family: var(--serif);
+      font-size: 1.48rem;
+      line-height: 1.18;
+      letter-spacing: -0.025em;
+    }
+    .research-card p { margin-bottom: 0; color: var(--body); font-size: 0.94rem; }
+
+    .interest-line {
+      padding: 18px 22px;
+      border-left: 3px solid var(--teal-700);
+      background: var(--teal-100);
+      color: #274c4a;
+      font-size: 0.92rem;
+    }
+    .interest-line strong { color: var(--navy-950); }
+
+    .publications-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 26px;
+      margin-bottom: 35px;
+    }
+    .publications-header .section-heading { margin-bottom: 0; }
+
+    .record-link {
+      flex: 0 0 auto;
+      color: var(--navy-800);
+      font-size: 0.88rem;
+      font-weight: 800;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 5px;
+    }
 
     .publication-list {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      border-top: 1px solid var(--line-dark);
+      border-top: 1px solid var(--line-strong);
     }
 
     .publication {
       display: grid;
-      grid-template-columns: 82px minmax(0, 1fr) auto;
-      gap: 25px;
-      padding: 27px 0;
+      grid-template-columns: 100px minmax(0, 1fr) 150px;
+      gap: 28px;
+      padding: 31px 0 32px;
       border-bottom: 1px solid var(--line);
     }
 
-    .publication-year {
-      color: var(--warm);
-      font-family: var(--serif);
-      font-size: 1.03rem;
-      font-weight: 700;
+    .publication-meta {
+      color: var(--muted);
+      font-size: 0.77rem;
+      font-weight: 850;
+      letter-spacing: 0.07em;
+      line-height: 1.5;
+      text-transform: uppercase;
     }
+    .publication-meta strong { display: block; color: var(--teal-700); font-size: 0.98rem; letter-spacing: 0; }
 
     .publication h3 {
-      margin-bottom: 8px;
-      color: var(--ink);
+      margin-bottom: 10px;
+      color: var(--navy-950);
       font-family: var(--serif);
-      font-size: 1.13rem;
-      font-weight: 700;
-      line-height: 1.43;
+      font-size: clamp(1.25rem, 2.3vw, 1.66rem);
+      line-height: 1.25;
+      letter-spacing: -0.026em;
     }
 
-    .authors,
-    .venue {
-      margin-bottom: 4px;
-      color: var(--muted);
-      font-size: 0.9rem;
-      line-height: 1.55;
-    }
-
-    .venue { color: #44515b; }
-
-    .status {
-      display: inline-block;
-      margin-right: 7px;
-      padding: 1px 7px 2px;
-      border: 1px solid #b8c3cb;
-      color: var(--navy);
-      font-family: var(--sans);
-      font-size: 0.66rem;
-      font-weight: 800;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      vertical-align: 2px;
-    }
+    .authors { margin-bottom: 7px; color: var(--body); font-size: 0.9rem; }
+    .venue { margin-bottom: 0; color: var(--muted); font-size: 0.86rem; }
+    .venue em { color: var(--body); }
 
     .paper-links {
-      align-self: start;
+      align-self: center;
       justify-content: flex-end;
-      min-width: 116px;
-      padding-top: 2px;
+      gap: 9px;
     }
+    .paper-links a {
+      display: inline-flex;
+      min-height: 34px;
+      align-items: center;
+      justify-content: center;
+      padding: 5px 11px;
+      border: 1px solid var(--line-strong);
+      border-radius: 999px;
+      color: var(--navy-800);
+      font-size: 0.76rem;
+      font-weight: 850;
+      text-decoration: none;
+    }
+    .paper-links a:hover,
+    .paper-links a:focus-visible { border-color: var(--navy-800); background: var(--navy-900); color: #fff; }
 
-    .background-grid {
+    .profile-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 70px;
+      gap: 24px;
     }
 
-    .background-column h3 {
-      margin-bottom: 20px;
-      padding-bottom: 11px;
-      border-bottom: 1px solid var(--line-dark);
-      color: var(--navy);
-      font-size: 0.9rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+    .profile-panel {
+      padding: 34px 34px 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--surface);
     }
 
-    .timeline {
-      display: grid;
-      gap: 28px;
+    .profile-panel h3 {
+      margin-bottom: 26px;
+      color: var(--navy-950);
+      font-family: var(--serif);
+      font-size: 1.65rem;
+      letter-spacing: -0.03em;
     }
 
     .timeline-item {
+      position: relative;
       display: grid;
-      grid-template-columns: 91px minmax(0, 1fr);
-      gap: 16px;
+      grid-template-columns: 96px minmax(0, 1fr);
+      gap: 20px;
+      padding: 0 0 27px;
     }
+    .timeline-item:last-child { padding-bottom: 7px; }
+    .timeline-item::before {
+      position: absolute;
+      left: 104px;
+      top: 7px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--teal-700);
+      box-shadow: 0 0 0 5px var(--teal-100);
+      content: "";
+    }
+    .timeline-item::after {
+      position: absolute;
+      left: 107.5px;
+      top: 22px;
+      bottom: 0;
+      width: 1px;
+      background: var(--line);
+      content: "";
+    }
+    .timeline-item:last-child::after { display: none; }
 
     .timeline-date {
-      margin: 2px 0 0;
-      color: var(--warm);
-      font-family: var(--serif);
-      font-size: 0.88rem;
-      font-weight: 700;
+      color: var(--gold-600);
+      font-size: 0.76rem;
+      font-weight: 850;
+      letter-spacing: 0.04em;
+      line-height: 1.5;
     }
-
-    .timeline-item h4 {
-      margin: 0 0 6px;
-      color: var(--ink);
-      font-size: 1rem;
-      line-height: 1.42;
+    .timeline-content { padding-left: 12px; }
+    .timeline-content h4 {
+      margin: 0 0 3px;
+      color: var(--navy-950);
+      font-size: 0.98rem;
+      line-height: 1.45;
     }
+    .timeline-content .institution { margin-bottom: 6px; color: var(--teal-700); font-size: 0.84rem; font-weight: 800; }
+    .timeline-content p { margin-bottom: 0; color: var(--muted); font-size: 0.83rem; line-height: 1.62; }
 
-    .timeline-item p {
-      margin-bottom: 0;
-      color: var(--muted);
-      font-size: 0.91rem;
-    }
-
-    .expertise {
-      margin-top: 48px;
-      padding-top: 30px;
-      border-top: 1px solid var(--line-dark);
-    }
-
-    .expertise h3 {
-      margin-bottom: 18px;
-      color: var(--navy);
-      font-size: 0.9rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .expertise-grid {
+    .profile-bottom {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px 45px;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 24px;
+      margin-top: 24px;
     }
 
-    .expertise-item strong {
-      display: block;
-      margin-bottom: 4px;
-      color: var(--ink);
-      font-size: 0.9rem;
-    }
-
-    .expertise-item span {
-      display: block;
-      color: var(--muted);
-      font-size: 0.89rem;
-    }
-
-    .contact-section {
-      background: var(--navy);
+    .compact-panel {
+      padding: 28px 31px;
+      border-radius: var(--radius-md);
+      background: var(--navy-900);
       color: #fff;
     }
-
-    .contact-section .section-label { color: #d8b99d; }
-    .contact-section h2 { color: #fff; }
-
-    .contact-copy {
-      max-width: 760px;
-      margin-bottom: 26px;
-      color: #d9e1e7;
-      font-size: 1.05rem;
+    .compact-panel.light {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--ink);
     }
-
-    .contact-row {
+    .compact-panel h3 {
+      margin-bottom: 13px;
+      font-family: var(--serif);
+      font-size: 1.38rem;
+      letter-spacing: -0.025em;
+    }
+    .compact-panel p { margin-bottom: 0; color: rgba(255,255,255,.74); font-size: 0.9rem; }
+    .compact-panel.light p { color: var(--body); }
+    .skills {
       display: flex;
       flex-wrap: wrap;
-      align-items: center;
-      gap: 15px 26px;
+      gap: 8px;
+      margin-top: 18px;
     }
-
-    .contact-email {
-      display: inline-flex;
-      min-height: 44px;
-      align-items: center;
-      padding: 9px 16px;
-      border: 1px solid #fff;
-      background: #fff;
-      color: var(--navy);
+    .skill {
+      padding: 6px 10px;
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: 999px;
+      color: rgba(255,255,255,.84);
+      font-size: 0.75rem;
       font-weight: 750;
-      text-decoration: none;
     }
 
-    .contact-row .profile-links {
-      margin: 0;
-    }
-
-    .contact-row .profile-links a {
-      color: #fff;
-      border-bottom-color: rgba(255,255,255,0.45);
-    }
-
-    footer {
-      padding: 24px 0;
-      background: #10273c;
-      color: #b9c5cf;
-      font-size: 0.8rem;
-    }
-
-    .footer-row {
+    .honors-list { display: grid; gap: 12px; }
+    .honor {
       display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--line);
+    }
+    .honor:last-child { padding-bottom: 0; border-bottom: 0; }
+    .honor-year {
+      display: grid;
+      flex: 0 0 auto;
+      width: 46px;
+      height: 46px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--gold-100);
+      color: var(--gold-600);
+      font-size: 0.72rem;
+      font-weight: 900;
+    }
+    .honor strong { display: block; color: var(--navy-950); font-size: 0.88rem; line-height: 1.4; }
+    .honor span { color: var(--muted); font-size: 0.78rem; }
+
+    .contact-section {
+      position: relative;
+      overflow: hidden;
+      padding: 100px 0 92px;
+      background: linear-gradient(135deg, var(--teal-700), #114d56 62%, var(--navy-900));
+      color: #fff;
+    }
+    .contact-section::after {
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      right: -170px;
+      top: -175px;
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 50%;
+      content: "";
+    }
+
+    .contact-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: end;
+      gap: 50px;
+    }
+    .contact-section .section-label { color: #bfe7e0; }
+    .contact-section h2 {
+      max-width: 780px;
+      margin-bottom: 18px;
+      font-family: var(--serif);
+      font-size: clamp(2.65rem, 5.8vw, 4.8rem);
+      font-weight: 650;
+      line-height: 1.02;
+      letter-spacing: -0.05em;
+    }
+    .contact-section p { max-width: 710px; margin-bottom: 0; color: rgba(255,255,255,.76); }
+
+    .email-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 850;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 7px;
+      white-space: nowrap;
+    }
+    .email-link svg { width: 18px; height: 18px; }
+    .contact-links { justify-content: flex-end; margin-top: 22px; gap: 16px; }
+    .contact-links a { color: rgba(255,255,255,.78); font-size: 0.82rem; font-weight: 750; text-decoration: none; }
+    .contact-links a:hover,
+    .contact-links a:focus-visible { color: #fff; }
+
+    .site-footer {
+      padding: 27px 0;
+      background: var(--navy-950);
+      color: rgba(255,255,255,.56);
+      font-size: 0.77rem;
+    }
+    .footer-inner {
+      display: flex;
+      align-items: center;
       justify-content: space-between;
       gap: 20px;
     }
+    .site-footer a { color: rgba(255,255,255,.78); text-decoration: none; }
 
-    footer a { color: #fff; }
+    :focus-visible { outline: 3px solid #ddae66; outline-offset: 4px; }
 
-    :focus-visible {
-      outline: 3px solid #d7a26e;
-      outline-offset: 3px;
+    /* Content remains visible by default. The site avoids scroll-triggered hiding so
+       publications and profile information are always readable, including without JS. */
+    .reveal { opacity: 1; transform: none; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 980px) {
+      .desktop-nav { gap: 18px; }
+      .hero { min-height: auto; }
+      .hero-grid { grid-template-columns: minmax(0, 1fr) 290px; gap: 45px; }
+      .research-grid { grid-template-columns: 1fr; }
+      .research-card { min-height: auto; }
+      .research-number { margin-bottom: 34px; }
+      .profile-grid { grid-template-columns: 1fr; }
     }
 
-    @media (max-width: 880px) {
-      .nav { gap: 17px; }
-      .nav a { font-size: 0.84rem; }
-      .hero-grid { grid-template-columns: minmax(0, 1fr) 250px; gap: 45px; }
-      .section-grid { grid-template-columns: 140px minmax(0, 1fr); gap: 38px; }
-      .background-grid { gap: 45px; }
+    @media (max-width: 800px) {
+      html { scroll-padding-top: 76px; }
+      .container { width: min(calc(100% - 32px), var(--max)); }
+      .desktop-nav, .header-cv { display: none; }
+      .menu-toggle { display: grid; place-items: center; }
+      .site-header { color: var(--navy-950); background: rgba(255,255,255,.96); border-bottom-color: var(--line); }
+      .site-header .brand-mark { border-color: var(--line-strong); }
+      .header-inner { min-height: 70px; }
+      .mobile-panel { inset: 70px 0 0; }
+      .hero { padding: 118px 0 70px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+      h1 { font-size: clamp(3.8rem, 16vw, 6.1rem); }
+      .portrait-column { order: -1; }
+      .portrait-shell { max-width: 260px; margin: 0; }
+      .portrait-shell::before { width: 110px; height: 110px; }
+      .section { padding: 78px 0; }
+      .section-intro { grid-template-columns: 1fr; gap: 8px; margin-bottom: 38px; }
+      .section-label { padding-top: 0; }
+      .publications-header { display: block; }
+      .publications-header .record-link { display: inline-block; margin-top: 18px; }
+      .publication { grid-template-columns: 76px minmax(0, 1fr); gap: 18px; }
+      .paper-links { grid-column: 2; justify-content: flex-start; }
+      .profile-bottom { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; align-items: start; }
+      .contact-links { justify-content: flex-start; }
     }
 
-    @media (max-width: 720px) {
-      .container { width: min(calc(100% - 30px), var(--max)); }
-      .nav { display: none; }
-      .header-inner { min-height: 62px; }
-      .hero { padding: 64px 0 60px; }
-      .hero-grid { grid-template-columns: 1fr; }
-      .portrait-wrap {
-        width: min(68vw, 260px);
-        justify-self: start;
-        margin-top: 18px;
-      }
-      .portrait { aspect-ratio: 1 / 1.14; }
-      h1 { font-size: clamp(3.4rem, 17vw, 5.4rem); }
-      .section { padding: 62px 0; }
-      .section-grid { grid-template-columns: 1fr; gap: 18px; }
-      .section-topline { align-items: start; flex-direction: column; gap: 10px; }
-      .publication { grid-template-columns: 58px minmax(0, 1fr); gap: 16px; }
-      .paper-links { grid-column: 2; justify-content: flex-start; padding-top: 4px; }
-      .background-grid { grid-template-columns: 1fr; gap: 52px; }
-      .expertise-grid { grid-template-columns: 1fr; }
-      .footer-row { flex-direction: column; gap: 8px; }
-    }
-
-    @media (max-width: 460px) {
-      .header-cv { padding: 7px 10px; }
-      .hero-title { font-size: 1.08rem; }
-      .primary-links { align-items: stretch; flex-direction: column; }
-      .button { width: 100%; }
+    @media (max-width: 560px) {
+      body { font-size: 15px; }
+      .container { width: min(calc(100% - 26px), var(--max)); }
+      .brand-mark { width: 31px; height: 31px; }
+      .hero { padding-top: 102px; }
+      .portrait-shell { max-width: 215px; padding: 9px; border-radius: 24px; }
+      .portrait-media { border-radius: 17px; }
+      .portrait-caption { display: block; padding-top: 12px; }
+      .portrait-caption span:last-child { display: block; margin-top: 2px; text-align: left; }
+      .eyebrow { font-size: 0.68rem; }
+      h1 { margin-bottom: 18px; font-size: clamp(3.5rem, 18vw, 4.8rem); }
+      .hero-role { font-size: 1.17rem; }
+      .hero-summary { font-size: 0.98rem; }
+      .hero-actions { align-items: stretch; }
+      .button { flex: 1 1 160px; }
+      .section-heading { font-size: clamp(2.35rem, 12vw, 3.25rem); }
+      .research-card { padding: 25px 23px; }
       .publication { grid-template-columns: 1fr; gap: 8px; }
       .paper-links { grid-column: 1; }
-      .timeline-item { grid-template-columns: 1fr; gap: 3px; }
+      .publication-meta strong { display: inline; margin-right: 6px; }
+      .profile-panel { padding: 27px 21px 20px; }
+      .timeline-item { grid-template-columns: 72px minmax(0, 1fr); gap: 15px; }
+      .timeline-item::before { left: 78px; }
+      .timeline-item::after { left: 81.5px; }
+      .timeline-content { padding-left: 10px; }
+      .compact-panel { padding: 25px 22px; }
+      .contact-section h2 { font-size: clamp(2.45rem, 13vw, 3.45rem); }
+      .email-link { white-space: normal; overflow-wrap: anywhere; }
+      .footer-inner { display: block; }
+      .footer-inner span:last-child { display: block; margin-top: 5px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
     }
 
     @media print {
-      .site-header,
-      .primary-links,
-      .profile-links,
-      .contact-section,
-      footer { display: none !important; }
-      body { background: #fff; color: #000; font-size: 10pt; }
-      .hero, .section { padding: 28px 0; border-color: #aaa; }
-      .container { width: 100%; }
-      .portrait-wrap { width: 180px; }
-      a { text-decoration: none; }
+      .site-header, .mobile-panel, .hero-actions, .social-links, .paper-links, .contact-section, .site-footer { display: none !important; }
+      .hero { min-height: auto; padding: 30px 0; background: #fff; color: #000; }
+      .hero::before, .network, .portrait-column { display: none; }
+      .hero-role, .hero-summary, .status-line { color: #333; }
+      .section { padding: 28px 0; }
+      .research-card, .profile-panel, .compact-panel { box-shadow: none; break-inside: avoid; }
     }
   </style>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <header class="site-header">
+  <header class="site-header" id="site-header">
     <div class="container header-inner">
-      <a class="wordmark" href="#top" aria-label="Imran Ahsan, home">Imran Ahsan</a>
-      <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="Imran Ahsan, home">
+        <span class="brand-mark" aria-hidden="true">IA</span>
+        <span>Imran Ahsan</span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Primary navigation">
         <a href="#research">Research</a>
         <a href="#publications">Publications</a>
-        <a href="#background">Background</a>
+        <a href="#profile">Profile</a>
         <a href="#contact">Contact</a>
       </nav>
-      <a class="header-cv" href="./Imran_Ahsan_Academic_CV_2026.pdf" target="_blank" rel="noopener">View CV</a>
+
+      <a class="header-cv" href="./Imran_Ahsan_Academic_CV_2026.pdf" target="_blank" rel="noopener">Curriculum vitae</a>
+
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-panel">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16"/>
+        </svg>
+      </button>
     </div>
   </header>
 
+  <div class="mobile-panel" id="mobile-panel" aria-hidden="true">
+    <nav aria-label="Mobile navigation">
+      <a href="#research"><span>Research</span><span aria-hidden="true">01</span></a>
+      <a href="#publications"><span>Publications</span><span aria-hidden="true">02</span></a>
+      <a href="#profile"><span>Profile</span><span aria-hidden="true">03</span></a>
+      <a href="#contact"><span>Contact</span><span aria-hidden="true">04</span></a>
+      <div class="mobile-socials">
+        <a href="https://scholar.google.com/citations?user=h_P3dAkAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar ↗</a>
+        <a href="https://github.com/ImranAhsan23" target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="./Imran_Ahsan_Academic_CV_2026.pdf" target="_blank" rel="noopener">CV ↗</a>
+      </div>
+    </nav>
+  </div>
+
   <main id="main-content">
     <section class="hero" id="top">
+      <div class="network" aria-hidden="true"></div>
       <div class="container hero-grid">
-        <div>
-          <p class="kicker">Trustworthy AI · Graph Machine Learning · Data Science</p>
+        <div class="hero-copy">
+          <div class="eyebrow">Trustworthy AI · Graph Machine Learning</div>
           <h1>Imran Ahsan</h1>
-          <p class="hero-title">Researcher in Trustworthy AI and Graph Machine Learning</p>
-          <p class="hero-summary">I study how AI systems can remain reliable after deployment, especially when graph-structured data must be corrected or deleted. My work develops efficient unlearning methods, transparent verification, realistic evaluation protocols, and reproducible research software.</p>
-          <p class="degree-status"><strong>Ph.D. requirements completed.</strong> Degree conferral at Chung-Ang University is scheduled for 21 August 2026.</p>
+          <p class="hero-role">Researcher in trustworthy, explainable, and data-centric artificial intelligence.</p>
+          <p class="hero-summary">I develop methods and evaluation frameworks for AI systems that must forget, explain, and remain reliable as data change. My doctoral research connects graph unlearning, explanation-based verification, privacy diagnostics, and realistic benchmarks for graph neural networks.</p>
+          <p class="status-line">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span><strong>Ph.D. requirements completed.</strong> Degree conferral at Chung-Ang University is scheduled for 21 August 2026 · Seoul, Republic of Korea.</span>
+          </p>
 
-          <div class="primary-links">
-            <a class="button" href="#publications">Selected publications</a>
-            <a class="button secondary" href="./Imran_Ahsan_Academic_CV_2026.pdf" target="_blank" rel="noopener">Download CV</a>
+          <div class="hero-actions">
+            <a class="button" href="#publications">
+              Selected work
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="button secondary" href="./Imran_Ahsan_Academic_CV_2026.pdf" target="_blank" rel="noopener">View academic CV</a>
           </div>
 
-          <div class="profile-links" aria-label="Professional profiles">
+          <div class="social-links" aria-label="Academic profiles">
             <a href="https://scholar.google.com/citations?user=h_P3dAkAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar ↗</a>
             <a href="https://orcid.org/0000-0002-7924-1186" target="_blank" rel="noopener">ORCID ↗</a>
             <a href="https://github.com/ImranAhsan23" target="_blank" rel="noopener">GitHub ↗</a>
@@ -688,241 +1071,319 @@
           </div>
         </div>
 
-        <aside class="portrait-wrap" aria-label="Profile photograph">
-          <div class="portrait">
-            <div class="portrait-fallback" aria-hidden="true">IA</div>
-            <!-- Uses the public profile photograph associated with @ImranAhsan23 on GitHub. -->
-            <img src="https://avatars.githubusercontent.com/u/175528088?v=4" alt="Portrait of Imran Ahsan" width="600" height="750" loading="eager" decoding="async" referrerpolicy="no-referrer" onerror="this.style.display='none'">
+        <aside class="portrait-column" aria-label="Profile photograph">
+          <div class="portrait-shell">
+            <div class="portrait-media">
+              <div class="portrait-fallback" aria-hidden="true">IA</div>
+              <img src="https://avatars.githubusercontent.com/u/175528088?v=4" alt="Portrait of Imran Ahsan" width="720" height="900" loading="eager" decoding="async" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('image-failed')">
+            </div>
+            <div class="portrait-caption">
+              <span><strong>Imran Ahsan</strong><br>Trustworthy AI researcher</span>
+              <span>Graph learning<br>Data science</span>
+            </div>
           </div>
-          <p class="portrait-caption">Seoul, Republic of Korea</p>
         </aside>
       </div>
     </section>
 
     <section class="section" id="research">
-      <div class="container section-grid">
-        <p class="section-label">Research</p>
-        <div>
-          <h2>Responsible model evolution for graph-based AI.</h2>
-          <p class="section-intro">My research addresses the practical and scientific questions that arise after an AI system has been trained: how to remove the influence of designated data, verify that removal transparently, and evaluate model updates under realistic privacy and data-governance requirements.</p>
-
-          <div class="research-list">
-            <article class="research-item">
-              <span class="research-number">01</span>
-              <div>
-                <h3>Efficient graph unlearning</h3>
-                <p>Targeted and subgraph-local update strategies that reduce the cost of full retraining while preserving retained-data utility and privacy-oriented behavior.</p>
-              </div>
-            </article>
-            <article class="research-item">
-              <span class="research-number">02</span>
-              <div>
-                <h3>Transparent verification</h3>
-                <p>Explanation-shift, structural, and privacy diagnostics for assessing whether the influence of requested graph entities has been removed.</p>
-              </div>
-            </article>
-            <article class="research-item">
-              <span class="research-number">03</span>
-              <div>
-                <h3>Realistic and auditable evaluation</h3>
-                <p>Natural-language deletion requests, data-quality-triggered forget sets, provenance-aware benchmarks, and reproducible multi-view evaluation.</p>
-              </div>
-            </article>
+      <div class="container">
+        <div class="section-intro reveal">
+          <div class="section-label">Research agenda</div>
+          <div>
+            <h2 class="section-heading">Responsible model evolution for graph-based AI.</h2>
+            <p class="section-lead">My research addresses what happens after an AI system has been trained: how designated information can be removed efficiently, how that removal can be verified transparently, and how evaluation can reflect realistic data-governance requests rather than idealized random deletions.</p>
           </div>
         </div>
+
+        <div class="research-grid">
+          <article class="research-card reveal">
+            <div class="research-number">01</div>
+            <h3>Efficient graph unlearning</h3>
+            <p>Request-centred and subgraph-local update strategies that reduce the scope of retraining while preserving retained-data utility and supporting privacy-oriented evaluation.</p>
+          </article>
+
+          <article class="research-card reveal">
+            <div class="research-number">02</div>
+            <h3>Transparent verification</h3>
+            <p>Explanation-shift, structural, and retrain-aligned diagnostics for determining whether a model has actually removed the influence of designated graph entities.</p>
+          </article>
+
+          <article class="research-card reveal">
+            <div class="research-number">03</div>
+            <h3>Realistic, auditable evaluation</h3>
+            <p>Natural-language erasure requests, provenance-aware forget sets, and data-quality triggers that connect governance requirements to reproducible graph-learning benchmarks.</p>
+          </article>
+        </div>
+
+        <div class="interest-line reveal"><strong>Broader interests:</strong> explainable AI, privacy-preserving learning, reproducible data science, information retrieval, retrieval-augmented recommendation, and AI for software engineering.</div>
       </div>
     </section>
 
-    <section class="section" id="publications">
+    <section class="section soft" id="publications">
       <div class="container">
-        <div class="section-topline">
+        <div class="publications-header reveal">
           <div>
-            <p class="section-label">Selected publications</p>
-            <h2>Recent research.</h2>
+            <div class="section-label">Selected publications</div>
+            <h2 class="section-heading">Recent research.</h2>
           </div>
-          <a class="text-link" href="https://scholar.google.com/citations?user=h_P3dAkAAAAJ&amp;hl=en" target="_blank" rel="noopener">Complete record on Google Scholar ↗</a>
+          <a class="record-link" href="https://scholar.google.com/citations?user=h_P3dAkAAAAJ&amp;hl=en" target="_blank" rel="noopener">Complete publication record on Google Scholar ↗</a>
         </div>
 
-        <ol class="publication-list">
-          <li class="publication">
-            <div class="publication-year">2026</div>
+        <div class="publication-list">
+          <article class="publication reveal">
+            <div class="publication-meta"><strong>2026</strong>IEEE TCE</div>
             <div>
-              <h3><span class="status">Accepted</span>NodeVanisher: Efficient and Scalable Data Unlearning in GNNs through Targeted Subgraph Refinement</h3>
-              <p class="authors"><strong>Imran Ahsan</strong>, Brig B. Gupta, Jinsung Kim, and Mucheol Kim.</p>
-              <p class="venue">IEEE Transactions on Consumer Electronics.</p>
+              <h3>NodeVanisher: Efficient and Scalable Data Unlearning in GNNs through Targeted Subgraph Refinement</h3>
+              <p class="authors"><strong>Imran Ahsan</strong>, Brig B. Gupta, Jinsung Kim, and Mucheol Kim</p>
+              <p class="venue"><em>IEEE Transactions on Consumer Electronics</em> · Accepted</p>
             </div>
             <div class="paper-links">
               <a href="https://scholar.google.com/scholar?q=%22NodeVanisher%3A+Efficient+and+Scalable+Data+Unlearning+in+GNNs+through+Targeted+Subgraph+Refinement%22" target="_blank" rel="noopener">Scholar ↗</a>
             </div>
-          </li>
+          </article>
 
-          <li class="publication">
-            <div class="publication-year">2026</div>
+          <article class="publication reveal">
+            <div class="publication-meta"><strong>2026</strong>WSDM</div>
             <div>
               <h3>Forget and Explain: Transparent Verification of GNN Unlearning</h3>
-              <p class="authors"><strong>Imran Ahsan</strong>, Hyunwook Yu, Jinsung Kim, and Mucheol Kim.</p>
-              <p class="venue">Proceedings of the 19th ACM International Conference on Web Search and Data Mining (WSDM ’26), pp. 1063–1067.</p>
+              <p class="authors"><strong>Imran Ahsan</strong>, Hyunwook Yu, Jinsung Kim, and Mucheol Kim</p>
+              <p class="venue"><em>Proceedings of the 19th ACM International Conference on Web Search and Data Mining</em>, pp. 1063–1067</p>
             </div>
             <div class="paper-links">
               <a href="https://doi.org/10.1145/3773966.3779386" target="_blank" rel="noopener">Paper ↗</a>
               <a href="https://github.com/ImranAhsan23/F-E" target="_blank" rel="noopener">Code ↗</a>
             </div>
-          </li>
+          </article>
 
-          <li class="publication">
-            <div class="publication-year">2026</div>
+          <article class="publication reveal">
+            <div class="publication-meta"><strong>2026</strong>WWW</div>
             <div>
               <h3>From Random Forget-Sets to Realistic Natural-Language Deletion Requests</h3>
-              <p class="authors"><strong>Imran Ahsan</strong>, Jinsung Kim, and Mucheol Kim.</p>
-              <p class="venue">Proceedings of the ACM Web Conference 2026 (WWW ’26), pp. 8741–8744.</p>
+              <p class="authors"><strong>Imran Ahsan</strong>, Jinsung Kim, and Mucheol Kim</p>
+              <p class="venue"><em>Proceedings of the ACM Web Conference 2026</em>, pp. 8741–8744</p>
             </div>
             <div class="paper-links">
               <a href="https://doi.org/10.1145/3774904.3792954" target="_blank" rel="noopener">Paper ↗</a>
               <a href="https://github.com/ImranAhsan23/Text2Forget" target="_blank" rel="noopener">Code ↗</a>
             </div>
-          </li>
+          </article>
 
-          <li class="publication">
-            <div class="publication-year">2026</div>
+          <article class="publication reveal">
+            <div class="publication-meta"><strong>2026</strong>CMES</div>
             <div>
               <h3>Unlocking the Power of Graph Neural Networks—A Systematic Literature Review of Application-Oriented GNN Studies</h3>
-              <p class="authors"><strong>Imran Ahsan</strong>, Muhammad Waseem Anwar, JungYoon Kim, and Mucheol Kim.</p>
-              <p class="venue">Computer Modeling in Engineering &amp; Sciences, 148(1), Article 3.</p>
+              <p class="authors"><strong>Imran Ahsan</strong>, Muhammad Waseem Anwar, JungYoon Kim, and Mucheol Kim</p>
+              <p class="venue"><em>Computer Modeling in Engineering &amp; Sciences</em>, 148(1), Article 3</p>
             </div>
             <div class="paper-links">
               <a href="https://doi.org/10.32604/cmes.2026.080382" target="_blank" rel="noopener">Paper ↗</a>
               <a href="https://github.com/ImranAhsan23/GNN-SLR" target="_blank" rel="noopener">Artifacts ↗</a>
             </div>
-          </li>
+          </article>
 
-          <li class="publication">
-            <div class="publication-year">2026</div>
+          <article class="publication reveal">
+            <div class="publication-meta"><strong>2026</strong>CMC</div>
             <div>
               <h3>The Semantic Design Space of Retrieval-Augmented Recommender Systems: A Systematic Review of LLM-Based Approaches</h3>
-              <p class="authors">Minhyeok Choi, <strong>Imran Ahsan</strong>, Hyunwook Yu, Taeyoung Choe, and Mucheol Kim.</p>
-              <p class="venue">Computers, Materials &amp; Continua, 88(1), Article 3.</p>
+              <p class="authors">Minhyeok Choi, <strong>Imran Ahsan</strong>, Hyunwook Yu, Taeyoung Choe, and Mucheol Kim</p>
+              <p class="venue"><em>Computers, Materials &amp; Continua</em>, 88(1), Article 3</p>
             </div>
             <div class="paper-links">
               <a href="https://doi.org/10.32604/cmc.2026.079504" target="_blank" rel="noopener">Paper ↗</a>
             </div>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <section class="section" id="background">
-      <div class="container section-grid">
-        <p class="section-label">Background</p>
-        <div>
-          <h2>Academic background and experience.</h2>
-          <p class="section-intro">My background combines doctoral research, six years of university teaching, and more than four years of professional software-development experience.</p>
-
-          <div class="background-grid">
-            <div class="background-column">
-              <h3>Appointments</h3>
-              <div class="timeline">
-                <article class="timeline-item">
-                  <p class="timeline-date">2023–2026</p>
-                  <div>
-                    <h4>Doctoral Researcher · Data Intelligence Laboratory, Chung-Ang University</h4>
-                    <p>Developed methods, benchmarks, and verification protocols for trustworthy graph learning and model updates.</p>
-                  </div>
-                </article>
-                <article class="timeline-item">
-                  <p class="timeline-date">2017–2023</p>
-                  <div>
-                    <h4>Lecturer in Computer Science · National University of Modern Languages</h4>
-                    <p>Taught computing and software-engineering courses, designed laboratories and assessments, and supervised final-year projects.</p>
-                  </div>
-                </article>
-                <article class="timeline-item">
-                  <p class="timeline-date">4+ years</p>
-                  <div>
-                    <h4>Software Developer · Enterprise and university systems</h4>
-                    <p>Developed portals, admissions systems, student-service modules, HR systems, and database-backed business applications.</p>
-                  </div>
-                </article>
-              </div>
-            </div>
-
-            <div class="background-column">
-              <h3>Education</h3>
-              <div class="timeline">
-                <article class="timeline-item">
-                  <p class="timeline-date">2023–2026</p>
-                  <div>
-                    <h4>Ph.D. in Engineering · Chung-Ang University</h4>
-                    <p>Dissertation: “Toward Efficient and Effective Graph Unlearning: Challenges, Methods, and Evaluation.” Defense completed June 2026; CGPA 4.26/4.50.</p>
-                  </div>
-                </article>
-                <article class="timeline-item">
-                  <p class="timeline-date">2014–2017</p>
-                  <div>
-                    <h4>M.S. in Software Engineering · NUST</h4>
-                    <p>Research on automated test-case generation from user specifications using natural language processing.</p>
-                  </div>
-                </article>
-                <article class="timeline-item">
-                  <p class="timeline-date">2009–2013</p>
-                  <div>
-                    <h4>B.S. in Software Engineering · IIUI</h4>
-                    <p>International Islamic University Islamabad, Pakistan.</p>
-                  </div>
-                </article>
-              </div>
-            </div>
-          </div>
-
-          <div class="expertise">
-            <h3>Methods and tools</h3>
-            <div class="expertise-grid">
-              <div class="expertise-item">
-                <strong>Graph AI and trustworthy machine learning</strong>
-                <span>Graph neural networks, graph and machine unlearning, explainable AI, privacy diagnostics, responsible model updates.</span>
-              </div>
-              <div class="expertise-item">
-                <strong>Data science and research</strong>
-                <span>Experimental design, benchmark construction, reproducible evaluation, systematic reviews, NLP, and information retrieval.</span>
-              </div>
-              <div class="expertise-item">
-                <strong>Programming and machine learning</strong>
-                <span>Python, PyTorch, PyTorch Geometric, scikit-learn, Java, C#, ASP.NET, and JavaScript.</span>
-              </div>
-              <div class="expertise-item">
-                <strong>Databases and web systems</strong>
-                <span>SQL Server, MySQL, Oracle, HTML/CSS, and database-backed enterprise applications.</span>
-              </div>
-            </div>
-          </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="section contact-section" id="contact">
-      <div class="container section-grid">
-        <p class="section-label">Contact</p>
-        <div>
-          <h2>Research collaboration and academic enquiries.</h2>
-          <p class="contact-copy">For research collaboration, academic enquiries, or questions about publications, code, and datasets, please contact me by email.</p>
-          <div class="contact-row">
-            <a class="contact-email" href="mailto:Imranahsan23@gmail.com">Imranahsan23@gmail.com</a>
-            <div class="profile-links" aria-label="Contact profiles">
-              <a href="https://scholar.google.com/citations?user=h_P3dAkAAAAJ&amp;hl=en" target="_blank" rel="noopener">Scholar ↗</a>
-              <a href="https://orcid.org/0000-0002-7924-1186" target="_blank" rel="noopener">ORCID ↗</a>
-              <a href="https://github.com/ImranAhsan23" target="_blank" rel="noopener">GitHub ↗</a>
-              <a href="https://www.linkedin.com/in/imran-ahsan-7042365a/" target="_blank" rel="noopener">LinkedIn ↗</a>
+    <section class="section warm" id="profile">
+      <div class="container">
+        <div class="section-intro reveal">
+          <div class="section-label">Academic profile</div>
+          <div>
+            <h2 class="section-heading">Research, education, and practical computing experience.</h2>
+            <p class="section-lead">My academic work is informed by university teaching and professional software development. This combination supports research that is methodologically rigorous, reproducible, and grounded in real implementation constraints.</p>
+          </div>
+        </div>
+
+        <div class="profile-grid">
+          <section class="profile-panel reveal" aria-labelledby="experience-heading">
+            <h3 id="experience-heading">Experience</h3>
+
+            <article class="timeline-item">
+              <div class="timeline-date">2023–2026</div>
+              <div class="timeline-content">
+                <h4>Doctoral Researcher</h4>
+                <div class="institution">Data Intelligence Laboratory · Chung-Ang University</div>
+                <p>Graph unlearning, explainable verification, privacy diagnostics, benchmarks, and reproducible PyTorch/PyTorch Geometric pipelines.</p>
+              </div>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-date">2017–2023</div>
+              <div class="timeline-content">
+                <h4>Lecturer in Computer Science</h4>
+                <div class="institution">National University of Modern Languages · Islamabad</div>
+                <p>Undergraduate computing courses, laboratory and project design, assessment, student supervision, and curriculum contribution.</p>
+              </div>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-date">4+ years</div>
+              <div class="timeline-content">
+                <h4>Software Developer / Enterprise Systems Developer</h4>
+                <div class="institution">Professional software engineering · Pakistan</div>
+                <p>University portals, admissions and student-service systems, HR modules, and database-backed business applications.</p>
+              </div>
+            </article>
+          </section>
+
+          <section class="profile-panel reveal" aria-labelledby="education-heading">
+            <h3 id="education-heading">Education</h3>
+
+            <article class="timeline-item">
+              <div class="timeline-date">2023–2026</div>
+              <div class="timeline-content">
+                <h4>Ph.D. in Engineering</h4>
+                <div class="institution">Chung-Ang University · Seoul</div>
+                <p>Department of Smart Cities. Dissertation: “Toward Efficient and Effective Graph Unlearning: Challenges, Methods, and Evaluation.” Degree expected 21 August 2026.</p>
+              </div>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-date">2014–2017</div>
+              <div class="timeline-content">
+                <h4>M.S. in Software Engineering</h4>
+                <div class="institution">National University of Sciences and Technology · Pakistan</div>
+                <p>Thesis on automated test-case generation from user specifications using natural language processing.</p>
+              </div>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-date">2009–2013</div>
+              <div class="timeline-content">
+                <h4>B.S. in Software Engineering</h4>
+                <div class="institution">International Islamic University Islamabad · Pakistan</div>
+                <p>Foundations in software engineering, programming, databases, systems analysis, and application development.</p>
+              </div>
+            </article>
+          </section>
+        </div>
+
+        <div class="profile-bottom">
+          <section class="compact-panel reveal" aria-labelledby="methods-heading">
+            <h3 id="methods-heading">Methods and tools</h3>
+            <p>Implementation-oriented research across graph learning, machine unlearning, explainability, privacy evaluation, benchmark construction, and software systems.</p>
+            <div class="skills" aria-label="Technical skills">
+              <span class="skill">Python</span>
+              <span class="skill">PyTorch</span>
+              <span class="skill">PyTorch Geometric</span>
+              <span class="skill">GCN / GAT / GraphSAGE</span>
+              <span class="skill">scikit-learn</span>
+              <span class="skill">Java</span>
+              <span class="skill">C# / ASP.NET</span>
+              <span class="skill">SQL</span>
             </div>
+          </section>
+
+          <section class="compact-panel light reveal" aria-labelledby="honors-heading">
+            <h3 id="honors-heading">Selected honors</h3>
+            <div class="honors-list">
+              <div class="honor">
+                <div class="honor-year">2023</div>
+                <div><strong>Chung-Ang University Young Scientist Scholarship</strong><span>CAYSS</span></div>
+              </div>
+              <div class="honor">
+                <div class="honor-year">2023</div>
+                <div><strong>BrainKorea Scholarship</strong><span>BK21</span></div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="container contact-grid">
+        <div>
+          <div class="section-label">Contact</div>
+          <h2>Research collaboration and academic enquiries.</h2>
+          <p>I welcome conversations about trustworthy AI, graph learning, machine unlearning, reproducible evaluation, and interdisciplinary research opportunities.</p>
+        </div>
+        <div>
+          <a class="email-link" href="mailto:Imranahsan23@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v14H4z"/><path d="m4 7 8 6 8-6"/></svg>
+            Imranahsan23@gmail.com
+          </a>
+          <div class="contact-links" aria-label="Contact profiles">
+            <a href="https://scholar.google.com/citations?user=h_P3dAkAAAAJ&amp;hl=en" target="_blank" rel="noopener">Scholar ↗</a>
+            <a href="https://orcid.org/0000-0002-7924-1186" target="_blank" rel="noopener">ORCID ↗</a>
+            <a href="https://github.com/ImranAhsan23" target="_blank" rel="noopener">GitHub ↗</a>
+            <a href="https://www.linkedin.com/in/imran-ahsan-7042365a/" target="_blank" rel="noopener">LinkedIn ↗</a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <div class="container footer-row">
-      <span>© 2026 Imran Ahsan</span>
-      <span>Academic profile · Last updated August 2026 · <a href="#top">Back to top</a></span>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© <span id="year">2026</span> Imran Ahsan</span>
+      <span>Academic profile · <a href="#top">Back to top ↑</a></span>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      const header = document.getElementById('site-header');
+      const button = document.getElementById('menu-toggle');
+      const panel = document.getElementById('mobile-panel');
+      const body = document.body;
+
+      const updateHeader = () => header.classList.toggle('scrolled', window.scrollY > 18);
+      updateHeader();
+      window.addEventListener('scroll', updateHeader, { passive: true });
+
+      const closeMenu = () => {
+        panel.classList.remove('open');
+        panel.setAttribute('aria-hidden', 'true');
+        button.setAttribute('aria-expanded', 'false');
+        button.setAttribute('aria-label', 'Open navigation');
+        header.classList.remove('menu-active');
+        body.classList.remove('menu-open');
+      };
+
+      button.addEventListener('click', () => {
+        const isOpen = panel.classList.toggle('open');
+        panel.setAttribute('aria-hidden', String(!isOpen));
+        button.setAttribute('aria-expanded', String(isOpen));
+        button.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+        header.classList.toggle('menu-active', isOpen);
+        body.classList.toggle('menu-open', isOpen);
+      });
+
+      panel.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+      window.addEventListener('resize', () => { if (window.innerWidth > 800) closeMenu(); });
+      document.addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });
+
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      const items = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px' });
+        items.forEach(item => observer.observe(item));
+      } else {
+        items.forEach(item => item.classList.add('visible'));
+      }
+    })();
+  </script>
 </body>
 </html>
